@@ -1,0 +1,153 @@
+OS Lab Assignment 3 – File Allocation, Memory Management & Scheduling Simulation Report
+
+===============================================================
+
+Experiment Objectives:
+
+Simulate CPU scheduling algorithms using Python
+
+Implement file allocation strategies (Sequential & Indexed)
+
+Demonstrate contiguous memory management using First-Fit, Best-Fit, and Worst-Fit
+
+Simulate MFT (Fixed Partitioning) and MVT (Variable Partitioning)
+
+Understand how OS allocates CPU time, disk blocks, and memory to processes
+
+Compare fragmentation and allocation behavior across different techniques
+
+Tasks Completed:
+1. CPU Scheduling Simulation (Priority & Round Robin)
+
+Implemented Priority Scheduling based on user-assigned priorities
+
+Lower number = higher priority
+
+Calculated waiting time and turnaround time
+
+Displayed process table with PID, Burst Time, Priority, WT, and TAT
+
+Implemented Round Robin with a fixed time quantum
+
+Simulated Gantt chart style execution order
+
+Verified average WT and TAT calculations
+
+2. Sequential File Allocation Simulation
+
+Implemented block-based disk storage
+
+Each file requires continuous blocks
+
+If any block in the required range is allocated, allocation fails
+
+Program outputs:
+
+Starting block
+
+Ending block
+
+Whether allocation succeeded or failed
+
+Demonstrates external fragmentation in sequential allocation
+
+3. Indexed File Allocation Simulation
+
+Implemented index block allocation for each file
+
+User enters:
+
+Index block number
+
+Data block numbers
+
+Allocation succeeds only if all blocks (index + data) are free
+
+Program outputs mapping:
+
+Index block → data blocks list
+
+Demonstrates how indexed allocation eliminates the need for contiguous blocks
+
+4. Contiguous Memory Allocation (First-Fit, Best-Fit, Worst-Fit)
+
+Implemented all three strategies:
+
+First-Fit: allocates first free partition large enough
+
+Best-Fit: allocates smallest suitable partition (less wastage)
+
+Worst-Fit: allocates largest suitable partition (more fragmentation)
+
+Program outputs:
+
+Process → Partition mapping
+
+Unallocated processes
+
+Showed variation in internal fragmentation and allocation success across strategies
+
+5. MFT & MVT Memory Management Simulation
+
+MFT (Multiple Fixed Partitions)
+
+Divided memory into equal-sized partitions
+
+Processes allocated only if size ≤ partition size
+
+Demonstrated internal fragmentation in fixed partitioning
+
+MVT (Multiple Variable Partitions)
+
+Entire memory treated as a single free region
+
+Each process reduces available memory dynamically
+
+Demonstrated external fragmentation and allocation failure
+
+Program outputs:
+
+Allocation success/failure
+
+Remaining memory after each process allocation
+
+Results Summary:
+
+Priority & Round Robin scheduling produced correct WT and TAT values
+
+Sequential and indexed allocation simulated disk block behavior accurately
+
+Contiguous memory allocation correctly demonstrated all three strategies
+
+MFT and MVT simulations showed internal and external fragmentation respectively
+
+All Python programs executed successfully without runtime errors
+
+Outputs matched expected OS behavior for each allocation/scheduling method
+
+Challenges:
+
+Ensuring user inputs (block numbers, partition sizes, burst times) were valid
+
+Indexed allocation required strict checking of duplicate/allocated blocks
+
+Best-Fit and Worst-Fit needed careful comparison logic
+
+MVT simulation required memory updates without predefined partitions
+
+Round Robin required dynamic updating of remaining burst times
+
+Conclusion:
+
+Successfully simulated CPU Scheduling, File Allocation, and Memory Management techniques using Python.
+The experiments demonstrated key OS concepts including:
+
+process scheduling
+
+disk allocation organization
+
+fragmentation behavior
+
+dynamic vs fixed memory allocation
+
+All assignment requirements were met, and the programs produced outputs consistent with real OS allocation and scheduling behavior.
